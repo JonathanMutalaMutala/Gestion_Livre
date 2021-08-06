@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivreController.cs" />
+    <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Livre_DataBase_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserTab.cs">
+      <DependentUpon>Livre_DataBase_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +220,8 @@
     <Content Include="Views\Livre\Delete.cshtml" />
     <Content Include="Views\Livre\GetAllLivreToBuy.cshtml" />
     <Content Include="Views\Livre\GetAllLivrePosseder.cshtml" />
+    <Content Include="Views\UserLogin\Create.cshtml" />
+    <Content Include="Views\UserLogin\Seconnecter.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

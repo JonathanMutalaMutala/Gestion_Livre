@@ -20,19 +20,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Titre)
+            Titre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Auteur)
+            Auteur
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DatePublication)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SouhaiterAcheter)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LivrePosseder)
+            Date de publication 
         </th>
         <th></th>
     </tr>
@@ -50,14 +44,7 @@
                 @Html.DisplayFor(modelItem => item.DatePublication)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SouhaiterAcheter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LivrePosseder)
-            </td>
-            <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>

@@ -16,8 +16,17 @@
           <Property Name="SouhaiterAcheter" Type="bit" Nullable="false" />
           <Property Name="LivrePosseder" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserTab">
+          <Key>
+            <PropertyRef Name="Id_User" />
+          </Key>
+          <Property Name="Id_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar(max)" />
+          <Property Name="password" Type="varchar(max)" />
+        </EntityType>
         <EntityContainer Name="Livre_Database_ModelStoreContainer">
           <EntitySet Name="LivreTable" EntityType="Self.LivreTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTab" EntityType="Self.UserTab" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -36,7 +45,16 @@
         </EntityType>
         <EntityContainer Name="Livre_Database" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="LivreTable" EntityType="Self.LivreTable" />
+          <EntitySet Name="UserTab" EntityType="Livre_Database_Model.UserTab" />
         </EntityContainer>
+        <EntityType Name="UserTab">
+          <Key>
+            <PropertyRef Name="Id_User" />
+          </Key>
+          <Property Name="Id_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -52,6 +70,15 @@
                 <ScalarProperty Name="Auteur" ColumnName="Auteur" />
                 <ScalarProperty Name="DatePublication" ColumnName="DatePublication" />
                 <ScalarProperty Name="SouhaiterAcheter" ColumnName="SouhaiterAcheter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTab">
+            <EntityTypeMapping TypeName="Livre_Database_Model.UserTab">
+              <MappingFragment StoreEntitySet="UserTab">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

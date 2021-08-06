@@ -26,5 +26,6 @@ namespace Gestionnaire_Livre_Jonathan_Mutala.Models
         }
     
         public virtual DbSet<LivreTable> LivreTable { get; set; }
+        public virtual DbSet<UserTab> UserTab { get; set; }
     }
 }

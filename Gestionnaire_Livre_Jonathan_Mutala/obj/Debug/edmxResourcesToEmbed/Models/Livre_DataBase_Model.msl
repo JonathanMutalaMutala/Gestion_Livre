@@ -13,5 +13,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserTab">
+      <EntityTypeMapping TypeName="Livre_Database_Model.UserTab">
+        <MappingFragment StoreEntitySet="UserTab">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="88152f0873be4963b5856c5c623ac9f5" Name="Diagram1">
         <EntityTypeShape EntityType="Livre_Database_Model.LivreTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Livre_Database_Model.UserTab" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
