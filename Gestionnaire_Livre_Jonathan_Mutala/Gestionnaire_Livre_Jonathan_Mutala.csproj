@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -129,13 +129,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LivreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LivreTable.cs">
+      <DependentUpon>Livre_DataBase_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Livre_DataBase_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Livre_DataBase_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Livre_DataBase_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Livre_DataBase_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Livre_DataBase_Model.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -160,6 +169,12 @@
     <Content Include="Models\Livre_DataBase_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Livre_DataBase_Model.Context.cs</LastGenOutput>
+      <DependentUpon>Livre_DataBase_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Livre_DataBase_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Livre_DataBase_Model.edmx</DependentUpon>
+      <LastGenOutput>Livre_DataBase_Model.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -167,9 +182,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Livre_DataBase_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Livre_DataBase_Model.edmx.diagram">
+    <Content Include="Models\Livre_DataBase_Model.edmx.diagram">
       <DependentUpon>Livre_DataBase_Model.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -195,6 +210,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Livre\Index.cshtml" />
+    <Content Include="Views\Livre\Create.cshtml" />
+    <Content Include="Views\Livre\Edit.cshtml" />
+    <Content Include="Views\Livre\Delete.cshtml" />
+    <Content Include="Views\Livre\GetAllLivreToBuy.cshtml" />
+    <Content Include="Views\Livre\GetAllLivrePosseder.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Livre_Database_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Livre_Database_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LivreTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -13,13 +13,13 @@
           <Property Name="Titre" Type="varchar(max)" />
           <Property Name="Auteur" Type="varchar(max)" />
           <Property Name="DatePublication" Type="varchar(max)" />
-          <Property Name="SouhaiterAcheter" Type="bit" />
+          <Property Name="SouhaiterAcheter" Type="bit" Nullable="false" />
+          <Property Name="LivrePosseder" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Livre_Database_ModelStoreContainer">
           <EntitySet Name="LivreTable" EntityType="Self.LivreTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Livre_Database_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +31,8 @@
           <Property Name="Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Auteur" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DatePublication" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="SouhaiterAcheter" Type="Boolean" />
+          <Property Name="SouhaiterAcheter" Type="Boolean" Nullable="false" />
+          <Property Name="LivrePosseder" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Livre_Database" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="LivreTable" EntityType="Self.LivreTable" />
@@ -45,6 +46,7 @@
           <EntitySetMapping Name="LivreTable">
             <EntityTypeMapping TypeName="Livre_Database_Model.LivreTable">
               <MappingFragment StoreEntitySet="LivreTable">
+                <ScalarProperty Name="LivrePosseder" ColumnName="LivrePosseder" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Titre" ColumnName="Titre" />
                 <ScalarProperty Name="Auteur" ColumnName="Auteur" />

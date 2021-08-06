@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Livre_Database_ModelStoreContainer" CdmEntityContainer="Livre_Database">
+    <EntitySetMapping Name="LivreTable">
+      <EntityTypeMapping TypeName="Livre_Database_Model.LivreTable">
+        <MappingFragment StoreEntitySet="LivreTable">
+          <ScalarProperty Name="LivrePosseder" ColumnName="LivrePosseder" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Auteur" ColumnName="Auteur" />
+          <ScalarProperty Name="DatePublication" ColumnName="DatePublication" />
+          <ScalarProperty Name="SouhaiterAcheter" ColumnName="SouhaiterAcheter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

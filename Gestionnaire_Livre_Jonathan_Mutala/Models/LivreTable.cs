@@ -11,13 +11,17 @@ namespace Gestionnaire_Livre_Jonathan_Mutala.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class LivreTable
     {
         public int Id { get; set; }
         public string Titre { get; set; }
         public string Auteur { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public string DatePublication { get; set; }
-        public Nullable<bool> SouhaiterAcheter { get; set; }
+        public bool SouhaiterAcheter { get; set; }
+        public bool LivrePosseder { get; set; }
     }
 }

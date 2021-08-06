@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Gestionnaire_Livre_Jonathan_Mutala.Models.LivreTable>
+
+@{
+    ViewBag.Title = "LivreToBuy";
+}
+
+<h2>Liste de Livre que vous souhaitez Acheter</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auteur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePublication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SouhaiterAcheter)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auteur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatePublication)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SouhaiterAcheter)
+        </td>
+    </tr>
+}
+
+</table>
